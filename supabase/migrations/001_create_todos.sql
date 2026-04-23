@@ -24,3 +24,6 @@ CREATE POLICY "anon_update_todos" ON todos
 -- Allow anonymous deletes
 CREATE POLICY "anon_delete_todos" ON todos
   FOR DELETE TO anon USING (true);
+
+-- Enable realtime for the todos table
+ALTER PUBLICATION supabase_realtime ADD TABLE todos;
